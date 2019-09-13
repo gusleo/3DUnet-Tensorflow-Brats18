@@ -15,7 +15,7 @@ import functools
 from tensorpack.utils import logger
 from tensorpack.utils.argtools import get_data_format
 from tensorpack.tfutils.tower import get_current_tower_context
-from tensorpack.tfutils.common import get_tf_version_tuple
+from tensorpack.tfutils.common import get_tf_version_number
 from tensorpack.tfutils.collection import backup_collection, restore_collection
 from tensorpack import layer_register, VariableHolder
 from tensorpack.tfutils.varreplace import custom_getter_scope
@@ -272,7 +272,7 @@ def BatchNorm3d(inputs, axis=None, training=None, momentum=0.9, epsilon=1e-5,
     if training is None:
         training = ctx.is_training
     training = bool(training)
-    TF_version = get_tf_version_tuple()
+    TF_version = get_tf_version_number()
     if not training and ctx.is_training:
         assert TF_version >= 1.4, \
             "Fine tuning a BatchNorm model with fixed statistics is only " \
