@@ -223,7 +223,6 @@ def get_train_dataflow(add_mask=True):
         imgs = BRATS_SEG.load_many(
             config.BASEDIR, config.TRAIN_DATASET, add_gt=False, add_mask=add_mask)
     # no filter for training
-    print(len(imgs))
     imgs = list(imgs) 
 
     ds = DataFromList(imgs, shuffle=True)
