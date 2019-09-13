@@ -13,13 +13,14 @@ from tensorpack import *
 from tensorpack.tfutils.summary import add_moving_summary
 from tensorpack.tfutils.scope_utils import under_name_scope
 from tensorpack.tfutils import optimizer
-from tensorpack.tfutils.common import get_tf_version_number
+from tensorpack.tfutils.common import get_tf_version_tuple
 import tensorpack.utils.viz as tpviz
 from tensorpack.utils.gpu import get_nr_gpu
 import config
 from model import ( unet3d, Loss )
 from data_sampler import (get_train_dataflow, get_eval_dataflow, get_test_dataflow)
 from eval import (eval_brats, pred_brats, segment_one_image, segment_one_image_dynamic)
+
 
 def get_batch_factor():
     nr_gpu = get_nr_gpu()
