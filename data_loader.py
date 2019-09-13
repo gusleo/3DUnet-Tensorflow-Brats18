@@ -29,7 +29,6 @@ class BRATS_SEG(object):
         mode: training/val/test
         """
         self.basedir = os.path.join(basedir, mode)
-        print (basedir)
         self.mode = mode
     
     def load_5fold(self):
