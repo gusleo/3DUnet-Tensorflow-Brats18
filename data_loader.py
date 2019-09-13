@@ -71,6 +71,7 @@ class BRATS_SEG(object):
             img_HGG = glob.glob(self.basedir+"/HGG/*")
             img_LGG = glob.glob(self.basedir+"/LGG/*")
             imgs = img_HGG + img_LGG
+            print("Images Training {}".format(len(imgs)))
         else:
             imgs = glob.glob(self.basedir+"/*")
         imgs = [x for x in imgs if 'survival_evaluation.csv' not in x]
