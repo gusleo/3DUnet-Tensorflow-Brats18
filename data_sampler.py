@@ -223,7 +223,7 @@ def get_train_dataflow(add_mask=True):
         imgs = BRATS_SEG.load_many(
             config.BASEDIR, config.TRAIN_DATASET, add_gt=False, add_mask=add_mask)
     # no filter for training
-    print(imgs.len)
+    print(len(imgs))
     imgs = list(imgs) 
 
     ds = DataFromList(imgs, shuffle=True)
@@ -232,7 +232,7 @@ def get_train_dataflow(add_mask=True):
     def preprocess(data):
         if config.NO_CACHE:
             fname, gt, im = data['file_name'], data['gt'], data['image_data']
-            volume_list, label, weight, _, _ = crop_brain_region(im, gt)
+            volume_list, label,s weight, _, _ = crop_brain_region(im, gt)
             batch = sampler3d(volume_list, label, weight)
         else:
             volume_list, label, weight, _, _ = data['preprocessed']
