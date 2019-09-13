@@ -226,7 +226,7 @@ def get_train_dataflow(add_mask=True):
     imgs = list(imgs) 
 
     ds = DataFromList(imgs, shuffle=True)
-    print(imgs.len())
+    print(ds.size())
     
     def preprocess(data):
         if config.NO_CACHE:
