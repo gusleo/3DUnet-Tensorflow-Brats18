@@ -68,7 +68,7 @@ class BRATS_SEG(object):
         modalities = ['flair', 't1ce', 't1.', 't2']
         
         if 'training' in self.basedir:
-            img_HGG = glob.glob("/data/dataset/BRATS2017/training/HGG/*")
+            img_HGG = glob.glob(self.basedir+"/HGG/*")
             img_LGG = glob.glob(self.basedir+"/LGG/*")
             imgs = img_HGG + img_LGG
             print("Images FUck Training {}".format(len(img_HGG)))
