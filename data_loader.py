@@ -74,6 +74,7 @@ class BRATS_SEG(object):
             print("Images Training {}".format(len(imgs)))
         else:
             imgs = glob.glob(self.basedir+"/*")
+            print("Images Global {}".format(len(imgs)))
         imgs = [x for x in imgs if 'survival_evaluation.csv' not in x]
         
         patient_ids = [x.split("/")[-1] for x in imgs]
