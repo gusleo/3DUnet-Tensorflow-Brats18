@@ -223,10 +223,11 @@ def get_train_dataflow(add_mask=True):
         imgs = BRATS_SEG.load_many(
             config.BASEDIR, config.TRAIN_DATASET, add_gt=False, add_mask=add_mask)
     # no filter for training
+    print(imgs.len)
     imgs = list(imgs) 
 
     ds = DataFromList(imgs, shuffle=True)
-    print(ds.size())
+    
     
     def preprocess(data):
         if config.NO_CACHE:
