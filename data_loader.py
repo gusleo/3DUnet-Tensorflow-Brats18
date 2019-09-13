@@ -124,7 +124,7 @@ class BRATS_SEG(object):
         return ret
 
 if __name__ == '__main__':
-    brats2018 = BRATS_SEG("/data/dataset/BRATS2018/", "training")
-    brats2018 = brats2018.load_3d()
-    print(len(brats2018))
-    print(brats2018[0])
+    brats2017 = BRATS_SEG("/data/dataset/BRATS2017/", "training")
+    brats2017 = brats2017.load_3d()
+    print(len(brats2017))
+    print(brats2017[0])
